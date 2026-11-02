@@ -1,0 +1,52 @@
+{"step":0,"action":"ALLOC","id":"0x7c39fcbe0090","type":"function","size":72}
+{"step":0,"action":"ALLOC","id":"0x7c09fcbe0050","type":"string","size":40}
+{"step":0,"action":"ALLOC","id":"0x7c39fcbe0100","type":"function","size":72}
+{"step":0,"action":"ALLOC","id":"0x7c09fcbe0090","type":"string","size":40}
+{"step":0,"action":"EXECUTE","instruction":"OP_CONSTANT","line":5,"description":"Push constant <fn foo> (constants[1]) onto the stack","stack":[{"type":"obj","id":"0x7c39fcbe0090"}],"frames":[{"function":"<script>","line":5,"stackBase":0}]}
+{"step":0,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"}],"frames":[{"function":"<script>","line":5,"stackBase":0}]}
+{"step":1,"action":"EXECUTE","instruction":"OP_DEFINE_GLOBAL","line":5,"description":"Define global 'foo' = <fn foo>","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"}],"frames":[{"function":"<script>","line":5,"stackBase":0}]}
+{"step":1,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"}],"frames":[{"function":"<script>","line":7,"stackBase":0}]}
+{"step":2,"action":"EXECUTE","instruction":"OP_GET_GLOBAL","line":7,"description":"Push global 'foo' (value <fn foo>) onto the stack","stack":[{"type":"obj","id":"0x7c39fcbe0090"}],"frames":[{"function":"<script>","line":7,"stackBase":0}]}
+{"step":2,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"}],"frames":[{"function":"<script>","line":7,"stackBase":0}]}
+{"step":3,"action":"EXECUTE","instruction":"OP_CONSTANT","line":7,"description":"Push constant 10 (constants[3]) onto the stack","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"}],"frames":[{"function":"<script>","line":7,"stackBase":0}]}
+{"step":3,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0}]}
+{"step":4,"action":"EXECUTE","instruction":"OP_CALL","line":7,"description":"Call <fn foo> with 1 argument(s)","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0}]}
+{"step":4,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":5,"action":"EXECUTE","instruction":"OP_GET_LOCAL","line":2,"description":"Push local in slot 1 (stack index 2, value 10) onto the stack","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":5,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":6,"action":"EXECUTE","instruction":"OP_CONSTANT","line":2,"description":"Push constant 3 (constants[0]) onto the stack","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":6,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"num","value":10},{"type":"num","value":3}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":7,"action":"EXECUTE","instruction":"OP_GREATER","line":2,"description":"Pop 10 and 3, push result of 10 > 3","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"num","value":10},{"type":"num","value":3}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":7,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"bool","value":true}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":8,"action":"EXECUTE","instruction":"OP_JUMP_IF_FALSE","line":2,"description":"Condition is true: truthy, continue (offset 7)","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"bool","value":true}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":8,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"bool","value":true}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":9,"action":"EXECUTE","instruction":"OP_POP","line":2,"description":"Pop and discard true","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"bool","value":true}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":2,"stackBase":1}]}
+{"step":9,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":3,"stackBase":1}]}
+{"step":10,"action":"EXECUTE","instruction":"OP_CONSTANT","line":3,"description":"Push constant \"Foo\" (constants[1]) onto the stack","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":3,"stackBase":1}]}
+{"step":10,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"obj","id":"0x7c09fcbe0090","value":"Foo"}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":3,"stackBase":1}]}
+{"step":11,"action":"EXECUTE","instruction":"OP_PRINT","line":3,"description":"Pop \"Foo\" and print it","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"obj","id":"0x7c09fcbe0090","value":"Foo"}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":3,"stackBase":1}]}
+{"step":11,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":4,"stackBase":1}]}
+{"step":12,"action":"EXECUTE","instruction":"OP_JUMP","line":4,"description":"Jump forward 1 bytes","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":4,"stackBase":1}]}
+{"step":12,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":5,"stackBase":1}]}
+{"step":13,"action":"EXECUTE","instruction":"OP_NIL","line":5,"description":"Push nil onto the stack","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":5,"stackBase":1}]}
+{"step":13,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"nil","value":null}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":5,"stackBase":1}]}
+{"step":14,"action":"EXECUTE","instruction":"OP_RETURN","line":5,"description":"Return nil from current function","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"obj","id":"0x7c39fcbe0100"},{"type":"num","value":10},{"type":"nil","value":null}],"frames":[{"function":"<script>","line":7,"stackBase":0},{"function":"foo","line":5,"stackBase":1}]}
+{"step":14,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"nil","value":null}],"frames":[{"function":"<script>","line":7,"stackBase":0}]}
+{"step":15,"action":"EXECUTE","instruction":"OP_POP","line":7,"description":"Pop and discard nil","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"nil","value":null}],"frames":[{"function":"<script>","line":7,"stackBase":0}]}
+{"step":15,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"}],"frames":[{"function":"<script>","line":8,"stackBase":0}]}
+{"step":16,"action":"EXECUTE","instruction":"OP_NIL","line":8,"description":"Push nil onto the stack","stack":[{"type":"obj","id":"0x7c39fcbe0090"}],"frames":[{"function":"<script>","line":8,"stackBase":0}]}
+{"step":16,"action":"RESULT","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"nil","value":null}],"frames":[{"function":"<script>","line":8,"stackBase":0}]}
+{"step":17,"action":"EXECUTE","instruction":"OP_RETURN","line":8,"description":"Return nil from current function","stack":[{"type":"obj","id":"0x7c39fcbe0090"},{"type":"nil","value":null}],"frames":[{"function":"<script>","line":8,"stackBase":0}]}
+{"step":17,"action":"RESULT","stack":[],"frames":[]}
+{"step":18,"action":"FREE","id":"0x7c09fcbe0090","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7c09fcbe0090","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7c39fcbe0100","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7c39fcbe0100","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7c09fcbe0050","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7c09fcbe0050","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7c39fcbe0090","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7c39fcbe0090","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7bf9fcbe0040","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7bf9fcbe0040","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7c09fcbe0010","reason":"shutdown"}
+{"step":18,"action":"FREE","id":"0x7c09fcbe0010","reason":"shutdown"}
